@@ -25,6 +25,8 @@ body, html {
 
 .hidden {
     display: none;
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
 /* 根据文本长度调整大小 */
