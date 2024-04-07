@@ -48,3 +48,26 @@ body, html {
     opacity: 0; /* 透明度为0，用于过渡效果 */
     transition: opacity 2s ease; /* 平滑的透明度过渡效果 */
 }
+
+#random-result.small {
+    font-size: 20%; /* 调整为合适的比例 */
+}
+
+#random-result.medium {
+    font-size: 40%; /* 调整为合适的比例 */
+}
+
+#random-result.large {
+    font-size: 80%; /* 调整为合适的比例 */
+}
+
+/* 确保#random-result的大小适合显示屏 */
+#random-result {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden; /* 如果文本仍然太大，则隐藏溢出的部分 */
+    word-break: break-word; /* 允许在单词内换行 */
+    text-align: center; /* 水平居中文本 */
+    line-height: normal; /* 行高可调整以适应显示屏的高度 */
+}
+JavaScript (script.js)
