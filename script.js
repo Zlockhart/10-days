@@ -25,13 +25,34 @@ function getRandomResult() {
     return { text: messagePrefix + selectedText + messageSuffix, styleClass };
 }
 
-document.getElementById('belief-button').addEventListener('click', function() {
-    const displayScreen = document.getElementById('display-screen');
-    const resultContainer = document.getElementById('random-result');
-    displayScreen.classList.remove("hidden");
-    const result = getRandomResult();
+document.addEventListener('DOMContentLoaded', (event) => {
+    setTimeout(() => {
+        document.getElementById('sub-message1').style.opacity = 1;
+    }, 1000); // 在1秒后显示
 
-    resultContainer.className = ''; // 清除之前的样式类
-    resultContainer.classList.add(result.styleClass); // 应用新的样式类
-    resultContainer.innerHTML = result.text; // 设置文本内容
-});
+    setTimeout(() => {
+        document.getElementById('sub-message2').style.opacity = 1;
+    }, 2000); // 在2秒后显示
+
+    setTimeout(() => {
+        document.getElementById('final-message1').style.opacity = 1;
+    }, 3000); // 在3秒后显示
+
+    setTimeout(() => {
+        document.getElementById('final-message2').style.opacity = 1;
+    }, 4000); // 在4秒后显示
+
+    setTimeout(() => {
+        document.getElementById('belief-button').style.opacity = 1;
+    }, 5000); // 在5秒后显示按钮
+
+    document.getElementById('belief-button').addEventListener('click', function() {
+        document.getElementById('container').style.display = 'none';
+        
+        const displayScreen = document.getElementById('display-screen');
+        displayScreen.classList.remove("hidden");
+        displayScreen.style.opacity = 1;
+
+        // 这里你需要添加生成随机结果并显示的逻辑
+        // generateRandomResult();
+    });
