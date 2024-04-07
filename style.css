@@ -31,3 +31,18 @@ body, html {
 .small { font-size: calc(100vh / 6); }
 .medium { font-size: calc(100vh / 3); }
 .large { font-size: calc(100vh / 5 * 4); }
+
+#display-screen {
+    border: 2px solid grey; /* 添加边框 */
+    color: red; /* 文本颜色为红色 */
+    padding: 20px; /* 内边距 */
+    margin: auto; /* 自动外边距用于水平居中 */
+    width: 50%; /* 设定宽度，可以根据需要调整 */
+    height: 300px; /* 设定高度，可以根据需要调整 */
+    display: flex; /* 使用flexbox进行布局 */
+    justify-content: center; /* 水平居中内容 */
+    align-items: center; /* 垂直居中内容 */
+    visibility: hidden; /* 初始时不可见 */
+    opacity: 0; /* 透明度为0，用于过渡效果 */
+    transition: opacity 2s ease; /* 平滑的透明度过渡效果 */
+}
