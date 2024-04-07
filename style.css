@@ -34,40 +34,42 @@ body, html {
 .medium { font-size: calc(100vh / 3); }
 .large { font-size: calc(100vh / 5 * 4); }
 
-#display-screen {
-    border: 2px solid grey; /* 添加边框 */
-    color: red; /* 文本颜色为红色 */
-    padding: 20px; /* 内边距 */
-    margin: auto; /* 自动外边距用于水平居中 */
-    width: 50%; /* 设定宽度，可以根据需要调整 */
-    height: 300px; /* 设定高度，可以根据需要调整 */
-    display: flex; /* 使用flexbox进行布局 */
-    justify-content: center; /* 水平居中内容 */
-    align-items: center; /* 垂直居中内容 */
-    visibility: hidden; /* 初始时不可见 */
-    opacity: 0; /* 透明度为0，用于过渡效果 */
-    transition: opacity 2s ease; /* 平滑的透明度过渡效果 */
-}
-
 #random-result.small {
-    font-size: 20%; /* 调整为合适的比例 */
+    /* 2字词，较小的字体大小 */
+    font-size: 3em; /* 根据需要调整 */
 }
 
 #random-result.medium {
-    font-size: 40%; /* 调整为合适的比例 */
+    /* 3字词，中等的字体大小 */
+    font-size: 5em; /* 根据需要调整 */
 }
 
 #random-result.large {
-    font-size: 80%; /* 调整为合适的比例 */
+    /* 4字词，较大的字体大小 */
+    font-size: 7em; /* 根据需要调整 */
 }
 
-/* 确保#random-result的大小适合显示屏 */
+#display-screen {
+    border: 2px solid grey;
+    color: red;
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+/* 确保文本适应其容器 */
 #random-result {
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden; /* 如果文本仍然太大，则隐藏溢出的部分 */
-    word-break: break-word; /* 允许在单词内换行 */
-    text-align: center; /* 水平居中文本 */
-    line-height: normal; /* 行高可调整以适应显示屏的高度 */
+    max-width: 100%; /* 最大宽度为显示屏宽度 */
+    height: auto; /* 高度自适应 */
+    overflow: hidden; /* 隐藏溢出文本 */
+    white-space: nowrap; /* 不换行 */
+    text-align: center; /* 文本居中 */
 }
 JavaScript (script.js)
