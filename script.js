@@ -4,26 +4,7 @@ const results = {
     fourWords: ["生生不息", "念念不忘，轮回不止"]
 };
 
-function getRandomResult() {
-    let random = Math.random();
-    let selectedText;
-    let styleClass;
 
-    if (random < 0.89) {
-        selectedText = results.twoWords[Math.floor(Math.random() * results.twoWords.length)];
-        styleClass = "small";
-    } else if (random < 0.99) {
-        selectedText = results.threeWords[Math.floor(Math.random() * results.threeWords.length)];
-        styleClass = "medium";
-    } else {
-        selectedText = results.fourWords[Math.floor(Math.random() * results.fourWords.length)];
-        styleClass = "large";
-    }
-
-    let messagePrefix = styleClass === "large" ? "我看见了「" : "我听见了「";
-    let messageSuffix = styleClass === "large" ? "」的激荡" : "」的回响";
-    return { text: messagePrefix + selectedText + messageSuffix, styleClass };
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     // 初始只显示主消息
@@ -71,3 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
         resultContainer.innerHTML = result.text; // 设置文本内容
     });
 });
+
+function getRandomResult() {
+    let random = Math.random();
+    let selectedText;
+    let styleClass;
+
+    if (random < 0.89) {
+        selectedText = results.twoWords[Math.floor(Math.random() * results.twoWords.length)];
+        styleClass = "small";
+    } else if (random < 0.99) {
+        selectedText = results.threeWords[Math.floor(Math.random() * results.threeWords.length)];
+        styleClass = "medium";
+    } else {
+        selectedText = results.fourWords[Math.floor(Math.random() * results.fourWords.length)];
+        styleClass = "large";
+    }
+
+    let messagePrefix = styleClass === "large" ? "我看见了「" : "我听见了「";
+    let messageSuffix = styleClass === "large" ? "」的激荡" : "」的回响";
+    return { text: messagePrefix + selectedText + messageSuffix, styleClass };
+}
