@@ -51,12 +51,12 @@ body, html {
 
 #random-result.medium {
     /* 调整中等字体大小为显示屏宽度的一定比例 */
-    font-size: 5vw; /* 示例: 3字词的字体大小为10%的视口宽度 */
+    font-size: 4vw; /* 示例: 3字词的字体大小为10%的视口宽度 */
 }
 
 #random-result.large {
     /* 调整较大字体大小为显示屏宽度的一定比例 */
-    font-size: 7vw; /* 示例: 4字词的字体大小为15%的视口宽度 */
+    font-size: 6vw; /* 示例: 4字词的字体大小为15%的视口宽度 */
 }
 
 
