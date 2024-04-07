@@ -5,7 +5,6 @@ const results = {
 };
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     // 初始只显示主消息
     document.getElementById('sub-message1').style.opacity = 0;
@@ -52,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultContainer.innerHTML = result.text; // 设置文本内容
     });
 });
+
 
 function getRandomResult() {
     let random = Math.random();
