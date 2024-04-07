@@ -64,7 +64,7 @@ function getRandomResult() {
         styleClass = 'large'; // 应用大字体大小
     }
 
-    let messagePrefix = styleClass === 'large' ? "我看见了「" : "我听见了「";
+    let messagePrefix = styleClass === 'large' ? "我看见了「" : "我听到了「";
     let messageSuffix = styleClass === 'large' ? "」的激荡" : "」的回响";
     return { text: messagePrefix + selectedText + messageSuffix, styleClass };
 }
