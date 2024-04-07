@@ -61,17 +61,24 @@ body, html {
 
 
 #display-screen {
+    width: 90vw; /* 视口宽度的90% */
+    height: 90vh; /* 视口高度的90%，根据实际需求调整 */
+    /* 其他样式 */
     border: 2px solid grey;
     color: red;
     padding: 20px;
-    margin: auto;
-    width: 50%;
-    height: 300px;
+    margin: 0 auto; /* 水平居中 */
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 2s ease;
+    visibility: hidden; /* 初始时不可见 */
+    opacity: 0; /* 透明度为0 */
+    transition: opacity 2s ease; /* 过渡效果 */
+    overflow: hidden; /* 如果内容超出则隐藏 */
+    box-sizing: border-box; /* 包含padding和border在内的总宽度 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 JavaScript (script.js)
