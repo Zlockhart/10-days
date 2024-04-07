@@ -27,25 +27,42 @@ function getRandomResult() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // 初始只显示主消息
+    document.getElementById('sub-message1').style.opacity = 0;
+    document.getElementById('sub-message2').style.opacity = 0;
+    document.getElementById('final-message1').style.opacity = 0;
+    document.getElementById('final-message2').style.opacity = 0;
     document.getElementById('belief-button').style.opacity = 0;
     document.getElementById('display-screen').style.opacity = 0;
     
-    // 按钮出现
+    // 顺序显示消息
+    setTimeout(() => {
+        document.getElementById('sub-message1').style.opacity = 1;
+    }, 1000); // 1秒后显示
+
+    setTimeout(() => {
+        document.getElementById('sub-message2').style.opacity = 1;
+    }, 2000); // 2秒后显示
+
+    setTimeout(() => {
+        document.getElementById('final-message1').style.opacity = 1;
+    }, 3000); // 3秒后显示
+
+    setTimeout(() => {
+        document.getElementById('final-message2').style.opacity = 1;
+    }, 4000); // 4秒后显示
+
+    // 最后显示按钮
     setTimeout(() => {
         document.getElementById('belief-button').style.opacity = 1;
-    }, 5000); // 在5秒后显示按钮
+    }, 5000); // 5秒后显示按钮
 
     document.getElementById('belief-button').addEventListener('click', () => {
-        // 点击按钮后隐藏容器和按钮，显示随机结果和显示屏
+        // 点击按钮后隐藏容器和按钮，显示显示屏
         document.getElementById('container').style.display = 'none';
 
         const displayScreen = document.getElementById('display-screen');
         displayScreen.style.opacity = 1;
         displayScreen.style.zIndex = 1000; // 确保显示屏在最上层
-        displayScreen.style.position = 'absolute';
-        displayScreen.style.top = '50%';
-        displayScreen.style.left = '50%';
-        displayScreen.style.transform = 'translate(-50%, -50%)';
 
         // 显示随机结果
         let result = getRandomResult();
