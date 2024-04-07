@@ -6,49 +6,42 @@ const results = {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 初始只显示主消息
-    document.getElementById('sub-message1').style.opacity = 0;
-    document.getElementById('sub-message2').style.opacity = 0;
-    document.getElementById('final-message1').style.opacity = 0;
-    document.getElementById('final-message2').style.opacity = 0;
-    document.getElementById('belief-button').style.opacity = 0;
-    document.getElementById('display-screen').style.opacity = 0;
-    
-    // 顺序显示消息
+    // 设置每个元素逐渐出现的时间
     setTimeout(() => {
         document.getElementById('sub-message1').style.opacity = 1;
-    }, 1000); // 1秒后显示
+    }, 1000); // 1秒后显示第一条信息
 
     setTimeout(() => {
         document.getElementById('sub-message2').style.opacity = 1;
-    }, 2000); // 2秒后显示
+    }, 2000); // 2秒后显示第二条信息
 
     setTimeout(() => {
         document.getElementById('final-message1').style.opacity = 1;
-    }, 3000); // 3秒后显示
+    }, 3000); // 3秒后显示第三条信息
 
     setTimeout(() => {
         document.getElementById('final-message2').style.opacity = 1;
-    }, 4000); // 4秒后显示
+    }, 4000); // 4秒后显示第四条信息
 
-    // 最后显示按钮
+    // 最后显示信念按钮
     setTimeout(() => {
         document.getElementById('belief-button').style.opacity = 1;
     }, 5000); // 5秒后显示按钮
 
     document.getElementById('belief-button').addEventListener('click', () => {
-        // 点击按钮后隐藏容器和按钮，显示显示屏
-        document.getElementById('container').style.display = 'none';
+        // 隐藏所有消息和按钮
+        document.getElementById('container').style.visibility = 'hidden';
 
+        // 显示带边框的显示屏
         const displayScreen = document.getElementById('display-screen');
+        displayScreen.style.visibility = 'visible';
         displayScreen.style.opacity = 1;
-        displayScreen.style.zIndex = 1000; // 确保显示屏在最上层
 
         // 显示随机结果
-        let result = getRandomResult();
-        let resultContainer = document.getElementById('random-result');
-        resultContainer.className = result.styleClass; // 设置样式类
-        resultContainer.innerHTML = result.text; // 设置文本内容
+        const result = getRandomResult();
+        const resultContainer = document.getElementById('random-result');
+        resultContainer.className = result.styleClass; // 应用样式
+        resultContainer.innerHTML = result.text; // 显示文本
     });
 });
 
