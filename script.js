@@ -48,21 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getRandomResult() {
     let random = Math.random();
-    let selectedText;
-    let styleClass;
+    let selectedText, styleClass;
 
     if (random < 0.89) {
+        // 如果是二字词
         selectedText = results.twoWords[Math.floor(Math.random() * results.twoWords.length)];
-        styleClass = "small";
+        styleClass = 'small'; // 应用小字体大小
     } else if (random < 0.99) {
+        // 如果是三字词
         selectedText = results.threeWords[Math.floor(Math.random() * results.threeWords.length)];
-        styleClass = "medium";
+        styleClass = 'medium'; // 应用中等字体大小
     } else {
+        // 如果是四字词
         selectedText = results.fourWords[Math.floor(Math.random() * results.fourWords.length)];
-        styleClass = "large";
+        styleClass = 'large'; // 应用大字体大小
     }
 
-    let messagePrefix = styleClass === "large" ? "我看见了「" : "我听见了「";
-    let messageSuffix = styleClass === "large" ? "」的激荡" : "」的回响";
+    let messagePrefix = styleClass === 'large' ? "我看见了「" : "我听见了「";
+    let messageSuffix = styleClass === 'large' ? "」的激荡" : "」的回响";
     return { text: messagePrefix + selectedText + messageSuffix, styleClass };
 }
