@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 更新按钮文本
     beliefButton.textContent = '封印契机，重塑回响';
+    beliefButton.style.fontSize = '2em'; // 或者使用 '24px', '150%', 等
+    beliefButton.style.padding = '15px 30px'; // 增加内边距
     });
 });
 
