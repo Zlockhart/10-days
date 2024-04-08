@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 获取按钮并修改其位置和文本内容
     const beliefButton = document.getElementById('belief-button');
+    beliefButton.style.fontSize = '2em'; // 或者使用 '24px', '150%', 等
+    beliefButton.style.padding = '15px 30px'; // 增加内边距
     beliefButton.style.position = 'absolute';
     beliefButton.style.top = 'auto';
     beliefButton.style.bottom = '0';
@@ -54,8 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 更新按钮文本
     beliefButton.textContent = '封印契机，重塑回响';
-    beliefButton.style.fontSize = '2em'; // 或者使用 '24px', '150%', 等
-    beliefButton.style.padding = '15px 30px'; // 增加内边距
     });
 });
 
