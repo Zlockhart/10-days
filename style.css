@@ -18,15 +18,28 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
-#sub-message1, #sub-message2, #final-message1, #final-message2, #belief-button, #display-screen {
+#sub-message1, #sub-message2, #final-message1, #final-message2, #display-screen {
     opacity: 0;
     transition: opacity 2s ease;
 }
 
+#belief-button{
+    opacity: 0;
+    transition: opacity 2s ease;
+    font-size: 2em; /* 增大字体大小 */
+    padding: 20px 40px; /* 增大内边距来增加按钮的大小 */
+    width: auto; /* 按钮宽度由内容和内边距决定 */
+    /* Optional: 如果你想要一个固定大小的按钮，可以设置 width 和 height */
+    /* width: 200px; */
+    /* height: 50px; */
+}
+
 .bigger-button {
-    font-size: 2em; /* 或者使用 '24px', '150%', 等 */
-    padding: 15px 30px; /* 增加内边距 */
-    /* 如果需要，还可以设置宽度和高度 */
+    font-size: 3em; /* 更大的字体大小 */
+    padding: 30px 60px; /* 更大的内边距 */
+    /* 为了确保按钮在移动到底部时仍然居中，可能需要调整 bottom 和 transform 属性 */
+    bottom: 10vh; /* 比如将按钮放置在底部的10vh的位置 */
+    transform: translateX(-50%) translateY(-50%); /* 同时垂直和水平居中 */
 }
 
 .hidden {
