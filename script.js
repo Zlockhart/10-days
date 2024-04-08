@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 获取按钮并修改其位置和文本内容
     const beliefButton = document.getElementById('belief-button');
+    beliefButton.classList.add('bigger-button');
     beliefButton.style.fontSize = '2em'; // 或者使用 '24px', '150%', 等
     beliefButton.style.padding = '15px 30px'; // 增加内边距
     beliefButton.style.position = 'absolute';
