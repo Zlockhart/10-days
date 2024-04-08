@@ -29,19 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000); // 5秒后显示按钮
 
     document.getElementById('belief-button').addEventListener('click', () => {
-        // 隐藏所有消息和按钮
-        document.getElementById('container').style.visibility = 'hidden';
+    // 隐藏所有消息
+    document.getElementById('container').style.visibility = 'hidden';
 
-        // 显示带边框的显示屏
-        const displayScreen = document.getElementById('display-screen');
-        displayScreen.style.visibility = 'visible';
-        displayScreen.style.opacity = 1;
+    // 显示带边框的显示屏
+    const displayScreen = document.getElementById('display-screen');
+    displayScreen.style.visibility = 'visible';
+    displayScreen.style.opacity = 1;
 
-        // 显示随机结果
-        const result = getRandomResult();
-        const resultContainer = document.getElementById('random-result');
-        resultContainer.className = result.styleClass; // 应用样式
-        resultContainer.innerHTML = result.text; // 显示文本
+    // 显示随机结果
+    const result = getRandomResult();
+    const resultContainer = document.getElementById('random-result');
+    resultContainer.className = result.styleClass;
+    resultContainer.innerHTML = result.text;
+
+    // 获取按钮并修改其位置和文本内容
+    const beliefButton = document.getElementById('belief-button');
+    beliefButton.style.position = 'absolute';
+    beliefButton.style.top = 'auto';
+    beliefButton.style.bottom = '0';
+    beliefButton.style.left = '50%';
+    beliefButton.style.transform = 'translateX(-50%)';
+    beliefButton.style.visibility = 'visible';
+
+    // 更新按钮文本
+    beliefButton.textContent = '封印契机，重塑回响';
     });
 });
 
