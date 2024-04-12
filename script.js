@@ -30,8 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 天按钮
     setTimeout(() => {
-    document.getElementById('heaven-button').style.opacity = 1;
+        document.getElementById('heaven-button').style.opacity = 1; // 确保天按钮也有透明度变化的CSS规则
     }, 5000); // 与信念按钮同时出现
+
+    // 确保这部分代码包含在DOMContentLoaded事件的回调函数中
+
+    document.getElementById('heaven-button').addEventListener('click', () => {
+        const inputText = document.getElementById('input-text');
+        inputText.classList.remove('hidden'); // 移除hidden类
+        inputText.style.opacity = 1; // 设置透明度为1，使其可见
+        inputText.focus(); // 将焦点设置到输入框
+    });
 
     document.getElementById('belief-button').addEventListener('click', () => {
     // 隐藏所有消息
@@ -39,14 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heavenList = ["天龙-LOCKHART", "天狗-安洁"];
 
-document.getElementById('heaven-button').addEventListener('click', () => {
-    // 显示输入框
-    const inputText = document.getElementById('input-text');
-    inputText.classList.remove('hidden');
-    inputText.style.opacity = 1;
-    inputText.value = ''; // 清空之前的输入
-    inputText.focus(); // 自动聚焦到输入框
-});
 
 document.getElementById('input-text').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
