@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 更新按钮文本
     beliefButton.textContent = '封印契机，重塑回响';
-    });
+    }, 5000);
 });
 
 
