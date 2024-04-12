@@ -34,6 +34,11 @@ body, html {
     /* height: 50px; */
 }
 
+#heaven-button {
+    opacity: 0;
+    transition: opacity 2s ease; /* 平滑过渡效果 */
+}
+
 .bigger-button {
     font-size: 3em; /* 更大的字体大小 */
     padding: 30px 60px; /* 更大的内边距 */
