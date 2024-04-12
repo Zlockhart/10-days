@@ -27,10 +27,51 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.getElementById('belief-button').style.opacity = 1;
     }, 5000); // 5秒后显示按钮
+    
+    // 天按钮
+    setTimeout(() => {
+    document.getElementById('heaven-button').style.opacity = 1;
+    }, 5000); // 与信念按钮同时出现
 
     document.getElementById('belief-button').addEventListener('click', () => {
     // 隐藏所有消息
     document.getElementById('container').style.visibility = 'hidden';
+
+    const heavenList = ["天龙-LOCKHART", "天狗-安洁"];
+
+document.getElementById('heaven-button').addEventListener('click', () => {
+    // 显示输入框
+    const inputText = document.getElementById('input-text');
+    inputText.classList.remove('hidden');
+    inputText.style.opacity = 1;
+    inputText.value = ''; // 清空之前的输入
+    inputText.focus(); // 自动聚焦到输入框
+});
+
+document.getElementById('input-text').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const input = e.target.value.trim(); // 获取输入值并去除两端空白字符
+        // 检查输入是否在heavenList列表中
+        if (heavenList.includes(input)) {
+            // 如果输入匹配，显示10个随机结果
+            const displayScreen = document.getElementById('display-screen');
+            displayScreen.innerHTML = ''; // 清空当前显示内容
+            displayScreen.style.visibility = 'visible';
+            displayScreen.style.opacity = 1;
+            for (let i = 0; i < 10; i++) {
+                const result = getRandomResult();
+                // 为了保持显示的内容不超出display-screen，添加的元素可能需要一定的样式调整
+                const div = document.createElement('div');
+                div.textContent = result.text;
+                div.className = result.styleClass; // 应用之前定义好的大小样式
+                displayScreen.appendChild(div);
+            }
+        } else {
+            // 如果输入不匹配，刷新网页
+            location.reload();
+        }
+    }
+});
 
     // 显示带边框的显示屏
     const displayScreen = document.getElementById('display-screen');
