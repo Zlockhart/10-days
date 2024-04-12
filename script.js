@@ -6,98 +6,70 @@ const results = {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 设置消息和按钮的渐显效果
+    // 设置每个元素逐渐出现的时间
     setTimeout(() => {
         document.getElementById('sub-message1').style.opacity = 1;
-    }, 1000);
+    }, 1000); // 1秒后显示第一条信息
+
     setTimeout(() => {
         document.getElementById('sub-message2').style.opacity = 1;
-    }, 2000);
+    }, 2000); // 2秒后显示第二条信息
+
     setTimeout(() => {
         document.getElementById('final-message1').style.opacity = 1;
-    }, 3000);
+    }, 3000); // 3秒后显示第三条信息
+
     setTimeout(() => {
         document.getElementById('final-message2').style.opacity = 1;
-    }, 4000);
+    }, 4000); // 4秒后显示第四条信息
+
+    // 最后显示信念按钮
     setTimeout(() => {
         document.getElementById('belief-button').style.opacity = 1;
-        document.getElementById('heaven-button').style.opacity = 1; // 修正：确保“天”按钮延迟显示
-    }, 5000);
+        document.getElementById('heaven-button').style.opacity = 1;
+    }, 5000); // 5秒后显示按钮
     
-    // “信念”按钮点击事件
-    document.getElementById('belief-button').addEventListener('click', () => {
-        // 隐藏所有消息，显示带边框的显示屏和随机结果
-        hideAllMessages();
-        showRandomResults();
-    });
 
-    // “天”按钮点击事件
-    setupHeavenButton();
-});
-
-function hideAllMessages() {
-    document.getElementById('container').style.visibility = 'hidden';
-    const displayScreen = document.getElementById('display-screen');
-    displayScreen.style.visibility = 'visible';
-    displayScreen.style.opacity = 1;
-}
-
-// 显示随机结果的函数
-function showRandomResults() {
-    const result = getRandomResult();
-    const resultContainer = document.getElementById('random-result');
-    resultContainer.className = result.styleClass;
-    resultContainer.innerHTML = result.text;
-    // 获取按钮并修改其位置和文本内容
-    updateBeliefButton();
-}
-
-function updateBeliefButton() {
-    const beliefButton = document.getElementById('belief-button');
-    beliefButton.classList.add('bigger-button');
-    beliefButton.style.fontSize = '2em'; // 或者使用 '24px', '150%', 等
-    beliefButton.style.padding = '15px 30px'; // 增加内边距
-    beliefButton.style.position = 'absolute';
-    beliefButton.style.top = 'auto';
-    beliefButton.style.bottom = '0';
-    beliefButton.style.left = '50%';
-    beliefButton.style.transform = 'translateX(-50%)';
-    beliefButton.style.visibility = 'visible';
-    beliefButton.textContent = '封印契机，重塑回响';
-}
-
-function setupHeavenButton() {
-    const heavenButton = document.getElementById('heaven-button');
-    heavenButton.addEventListener('click', () => {
-        const inputText = document.getElementById('input-text');
-        if (inputText.classList.contains('hidden')) {
-            // 第一次点击：显示输入框
-            inputText.classList.remove('hidden');
-            inputText.style.opacity = 1;
-            inputText.focus();
-        } else {
-            // 第二次点击：处理输入并提交
-            processInput(inputText.value.trim());
-            inputText.classList.add('hidden'); // 可选：隐藏输入框
-        }
-    });
-}
-
-function processInput(input) {
-    const heavenList = ["天龙-LOCKHART", "天狗-安洁"];
-    if (heavenList.includes(input)) {
-        displayScreen.innerHTML = ''; // 显示10个随机结果...
-        for (let i = 0; i < 10; i++) {
-            const result = getRandomResult();
-            // 添加结果到显示屏...
-        }
-    } else {
-        location.reload();
-    }
-}
     // 确保这部分代码包含在DOMContentLoaded事件的回调函数中
 
+document.getElementById('heaven-button').addEventListener('click', () => {
+    const inputText = document.getElementById('input-text');
+    inputText.classList.remove('hidden'); // 移除hidden类
+    inputText.style.opacity = 1; // 设置透明度为1，使其可见
+    inputText.focus(); // 将焦点设置到输入框
+});
 
+document.getElementById('belief-button').addEventListener('click', () => {
+    // 隐藏所有消息
+document.getElementById('container').style.visibility = 'hidden';
+
+const heavenList = ["天龙-LOCKHART", "天狗-安洁"];
+
+
+document.getElementById('input-text').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const input = e.target.value.trim(); // 获取输入值并去除两端空白字符
+        // 检查输入是否在heavenList列表中
+        if (heavenList.includes(input)) {
+            // 如果输入匹配，显示10个随机结果
+            const displayScreen = document.getElementById('display-screen');
+            displayScreen.innerHTML = ''; // 清空当前显示内容
+            displayScreen.style.visibility = 'visible';
+            displayScreen.style.opacity = 1;
+            for (let i = 0; i < 10; i++) {
+                const result = getRandomResult();
+                // 为了保持显示的内容不超出display-screen，添加的元素可能需要一定的样式调整
+                const div = document.createElement('div');
+                div.textContent = result.text;
+                div.className = result.styleClass; // 应用之前定义好的大小样式
+                displayScreen.appendChild(div);
+            }
+        } else {
+            // 如果输入不匹配，刷新网页
+            location.reload();
+        }
+    }
+});
 
     // 显示带边框的显示屏
     const displayScreen = document.getElementById('display-screen');
