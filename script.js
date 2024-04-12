@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const beliefButton = document.getElementById('belief-button');
     beliefButton.addEventListener('click', () => {
-    clickCount++; // 增加点击次数
-    document.getElementById('click-counter').textContent = '点击次数: ' + clickCount; // 更新显示
-    
+        clickCount++; // 增加点击次数
+        document.getElementById('click-counter').textContent = '点击次数: ' + clickCount; // 更新显示
+    });
     // 获取按钮并修改其位置和文本内容
     const beliefButton = document.getElementById('belief-button');
     beliefButton.classList.add('bigger-button');
