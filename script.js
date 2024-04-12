@@ -26,12 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 最后显示信念按钮
     setTimeout(() => {
         document.getElementById('belief-button').style.opacity = 1;
+        document.getElementById('heaven-button').style.opacity = 1;
     }, 5000); // 5秒后显示按钮
     
-    // 天按钮
-    setTimeout(() => {
-        document.getElementById('heaven-button').style.opacity = 1; // 确保天按钮也有透明度变化的CSS规则
-    }, 5000); // 与信念按钮同时出现
 
     // 确保这部分代码包含在DOMContentLoaded事件的回调函数中
 
