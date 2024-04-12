@@ -4,6 +4,7 @@ const results = {
     fourWords: ["生生不息", "万物生灵"]
 };
 
+
 document.addEventListener('DOMContentLoaded', () => {
     // 设置每个元素逐渐出现的时间
     setTimeout(() => {
