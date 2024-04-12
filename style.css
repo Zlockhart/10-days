@@ -78,6 +78,16 @@ body, html {
     font-size: 6vw; /* 示例: 4字词的字体大小为15%的视口宽度 */
 }
 
+#click-counter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    /* 添加更多样式 */
+    font-size: 16px; /* 示例：调整字体大小 */
+}
 
 #display-screen {
     max-width: 90vw;
