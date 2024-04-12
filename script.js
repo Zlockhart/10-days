@@ -32,18 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 确保这部分代码包含在DOMContentLoaded事件的回调函数中
 
-    document.getElementById('heaven-button').addEventListener('click', () => {
-        const inputText = document.getElementById('input-text');
-        inputText.classList.remove('hidden'); // 移除hidden类
-        inputText.style.opacity = 1; // 设置透明度为1，使其可见
-        inputText.focus(); // 将焦点设置到输入框
-    });
+document.getElementById('heaven-button').addEventListener('click', () => {
+    const inputText = document.getElementById('input-text');
+    inputText.classList.remove('hidden'); // 移除hidden类
+    inputText.style.opacity = 1; // 设置透明度为1，使其可见
+    inputText.focus(); // 将焦点设置到输入框
+});
 
-    document.getElementById('belief-button').addEventListener('click', () => {
+document.getElementById('belief-button').addEventListener('click', () => {
     // 隐藏所有消息
-    document.getElementById('container').style.visibility = 'hidden';
+document.getElementById('container').style.visibility = 'hidden';
 
-    const heavenList = ["天龙-LOCKHART", "天狗-安洁"];
+const heavenList = ["天龙-LOCKHART", "天狗-安洁"];
 
 
 document.getElementById('input-text').addEventListener('keypress', (e) => {
