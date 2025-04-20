@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000); // 5秒后显示按钮
 
     document.getElementById('belief-button').addEventListener('click', () => {
+    const clickSound = document.getElementById('click-sound');
+    clickSound.currentTime = 0; // 每次从头播放
+    clickSound.play();
     // 隐藏所有消息
     document.getElementById('container').style.visibility = 'hidden';
 
